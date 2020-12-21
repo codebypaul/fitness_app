@@ -1,7 +1,11 @@
-export default function Profile(){
+import React from 'react'
+
+function Profile() {
     return (
         <div>
             Profile page!
         </div>
     )
 }
+
+export default Profile;

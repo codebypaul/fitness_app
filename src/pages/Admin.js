@@ -1,7 +1,11 @@
-export default function Admin(){
+import React from 'react'
+
+function Admin() {
     return (
-        <div className="card mt-5 text-center p-5">
+        <div>
             Admin page!
         </div>
     )
 }
+
+export default Admin;

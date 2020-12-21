@@ -1,12 +1,19 @@
-import {Link } from 'react-router-dom'
+import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
 
-export default function Nav(){
-    return(
+
+function Nav() {
+    return (
         <div>
-            <Link to="/">Home</Link>
-            <Link to="/profile">Profile</Link>
-            <Link to="/admin">Admin</Link>
-            <Link to="/user">Account</Link>
+            <nav className="navbar">
+                <div className="navbar-container">
+                    <Link to='/' className='navbar-logo'>
+
+                    </Link>
+                </div>
+            </nav>
         </div>
     )
 }
+
+export default Nav;
