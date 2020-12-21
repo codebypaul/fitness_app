@@ -46,7 +46,7 @@
   }
   
   .nav-item {
-    height: 80px;
+    height: 10px;
   }
   
   .nav-links {
@@ -87,10 +87,14 @@
       height: 90vh;
       position: absolute;
       top: 80px;
-      left: -100%;
+      left: -140%;
       opacity: 1;
       transition: all 0.5s ease;
     }
+
+    .nav-item {
+        height: 60px;
+      }
   
     .nav-menu.active {
       background: #242222;
