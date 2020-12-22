@@ -1,9 +1,12 @@
 import React from 'react';
+import MainSection from '../components/MainSection'
+import Cards from '../components/Cards'
 
 const Welcome = () => {
     return (
         <div>
-            <h1>Welcome</h1>
+            <MainSection />
+            <Cards />
         </div>
     )
 }
