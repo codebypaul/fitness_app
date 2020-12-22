@@ -9,12 +9,17 @@
     top: 0;
     z-index: 999;
   }
+  .buttons {
+      display: inline-block;
+      grid-template-columns: repeat(2, auto);
+      margin-bottom: 25px;
+  }
   
   .navbar-container {
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 80px;
+    height: 90px;
     max-width: 1500px;
   }
   
@@ -22,6 +27,7 @@
     color: #fff;
     justify-self: start;
     margin-left: 20px;
+    margin-bottom: 30px;
     cursor: pointer;
     text-decoration: none;
     font-size: 2rem;
@@ -36,7 +42,7 @@
   
   .nav-menu {
     display: grid;
-    grid-template-columns: repeat(4, auto);
+    grid-template-columns: repeat(5, auto);
     grid-gap: 10px;
     list-style: none;
     text-align: center;

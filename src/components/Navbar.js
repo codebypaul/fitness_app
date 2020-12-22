@@ -1,6 +1,7 @@
 import { Button } from "./Button";
+import { LogInButton } from "./LogInButton";
 import React, { useState } from "react";
-import { Link } from "react-router-dom";
+import { NavLink, Link } from "react-router-dom";
 import "./Navbar.css";
 
 const Navbar = (props) => {
@@ -24,7 +25,7 @@ const Navbar = (props) => {
     <nav className="navbar">
       <div className="navbar-container">
         <Link className="navbar-logo" to="/">
-          WorkFit <i className="fab fa-typo3" />
+          GeneralFit <i className="fab fa-typo3" />
         </Link>
         <div className="menu-icon" onClick={handleClick}>
           <i className={click ? "fas fa-times" : "fas fa-bars"} />
@@ -50,9 +51,19 @@ const Navbar = (props) => {
                 Nutrition
               </Link>
             </li>
+            <li className="nav-item">
+              <NavLink className="nav-links-mobile" to="/sign-up" onClick={closeMobileMenu}>
+                Sign Up
+              </NavLink>
+            </li>
+            <li className="nav-item">
+              <NavLink className="nav-links-mobile" to="/login" onClick={closeMobileMenu}>
+                Log In
+              </NavLink>
+            </li>
           </ul>
           {props.isAuth ? (
-            <ul className="navbar-nav ml-auto">
+            <ul className={click ? "nav-menu active" : "nav-menu"}>
               <li className="nav-item">
                 <Link className="nav-links" to="/profile" onClick={closeMobileMenu}>
                   Profile
@@ -69,13 +80,9 @@ const Navbar = (props) => {
               </li>
             </ul>
           ) : (
-            <ul className="navbar-nav ml-auto">
+            <ul className="navbar-nav ml-auto buttons">
               {button && <Button buttonStyle="btn--outline">Sign Up</Button>}
-              <li className="nav-item">
-                <Link className="nav-links" to="/login">
-                  Login
-                </Link>
-              </li>
+              
             </ul>
           )}
       </div>
@@ -85,64 +92,5 @@ const Navbar = (props) => {
 
 export default Navbar;
 
-{
-  /* <div> */
-}
 
-{
-  /* <nav className="navbar">
-        <div className="navbar-container">
-          <Link to="/" className="navbar-logo">
-            WorkFit <i className="fab fa-typo3" />
-          </Link>
-          <div className="menu-icon" onClick={handleClick}>
-            <i className={click ? "fas fa-times" : "fas fa-bars"} />
-          </div>
-          <ul className={click ? "nav-menu active" : "nav-menu"}>
-            <li className="nav-item">
-              <Link to="/" className="nav-linkss" onClick={closeMobileMenu}>
-                Home
-              </Link>
-            </li>
-            <li className="nav-item">
-              <Link
-                to="/profile"
-                className="nav-links"
-                onClick={closeMobileMenu}
-              >
-                Profile
-              </Link>
-            </li>
-            <li className="nav-item">
-              <Link
-                to="/workouts"
-                className="nav-links"
-                onClick={closeMobileMenu}
-              >
-                Workouts
-              </Link>
-            </li>
-            <li className="nav-item">
-              <Link
-                to="/nutrition"
-                className="nav-links"
-                onClick={closeMobileMenu}
-              >
-                Nutrition
-              </Link>
-            </li>
-            <li className="nav-item">
-              <Link
-                to="/sign-up"
-                className="nav-links-mobile"
-                onClick={closeMobileMenu}
-              >
-                Sign Up
-              </Link>
-            </li>
-          </ul>
-          {button && <Button buttonStyle="btn--outline">Sign Up</Button>}
-        </div>
-      </nav>
-    </div> */
-}
+
