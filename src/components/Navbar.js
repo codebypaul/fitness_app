@@ -30,67 +30,87 @@ const Navbar = (props) => {
         <div className="menu-icon" onClick={handleClick}>
           <i className={click ? "fas fa-times" : "fas fa-bars"} />
         </div>
+        <ul className={click ? "nav-menu active" : "nav-menu"}>
+          <li className="nav-item">
+            <Link className="nav-links" exact to="/" onClick={closeMobileMenu}>
+              Home
+            </Link>
+          </li>
+          <li className="nav-item">
+            <Link className="nav-links" to="/about" onClick={closeMobileMenu}>
+              About
+            </Link>
+          </li>
+          <li className="nav-item">
+            <Link
+              className="nav-links"
+              to="/workouts"
+              onClick={closeMobileMenu}
+            >
+              Workouts
+            </Link>
+          </li>
+          <li className="nav-item">
+            <Link
+              className="nav-links"
+              to="/nutrition"
+              onClick={closeMobileMenu}
+            >
+              Nutrition
+            </Link>
+          </li>
+          <li className="nav-item">
+            <NavLink
+              className="nav-links-mobile"
+              to="/sign-up"
+              onClick={closeMobileMenu}
+            >
+              Sign Up
+            </NavLink>
+          </li>
+          <li className="nav-item">
+            <NavLink
+              className="nav-links-mobile"
+              to="/login"
+              onClick={closeMobileMenu}
+            >
+              Log In
+            </NavLink>
+          </li>
+        </ul>
+        {props.isAuth ? (
           <ul className={click ? "nav-menu active" : "nav-menu"}>
             <li className="nav-item">
-              <Link className="nav-links" exact to="/" onClick={closeMobileMenu}>
-                Home
+              <Link
+                className="nav-links"
+                to="/profile"
+                onClick={closeMobileMenu}
+              >
+                Profile
               </Link>
             </li>
             <li className="nav-item">
-              <Link className="nav-links" to="/about" onClick={closeMobileMenu}>
-                About
-              </Link>
-            </li>
-            <li className="nav-item">
-              <Link className="nav-links" to="/workouts" onClick={closeMobileMenu}>
-                Workouts
-              </Link>
-            </li>
-            <li className="nav-item">
-              <Link className="nav-links" to="/nutrition" onClick={closeMobileMenu}>
-                Nutrition
-              </Link>
-            </li>
-            <li className="nav-item">
-              <NavLink className="nav-links-mobile" to="/sign-up" onClick={closeMobileMenu}>
-                Sign Up
-              </NavLink>
-            </li>
-            <li className="nav-item">
-              <NavLink className="nav-links-mobile" to="/login" onClick={closeMobileMenu}>
-                Log In
-              </NavLink>
+              <span
+                onClick={props.handleLogout}
+                className="nav-links logout-link"
+                onClick={closeMobileMenu}
+              >
+                Logout
+              </span>
             </li>
           </ul>
-          {props.isAuth ? (
-            <ul className={click ? "nav-menu active" : "nav-menu"}>
-              <li className="nav-item">
-                <Link className="nav-links" to="/profile" onClick={closeMobileMenu}>
-                  Profile
-                </Link>
-              </li>
-              <li className="nav-item">
-                <span
-                  onClick={props.handleLogout}
-                  className="nav-links logout-link"
-                  onClick={closeMobileMenu}
-                >
-                  Logout
-                </span>
-              </li>
-            </ul>
-          ) : (
+        ) : (
+          <div>
             <ul className="navbar-nav ml-auto buttons">
               {button && <Button buttonStyle="btn--outline">Sign Up</Button>}
-              
+            
+                {button && <LogInButton buttonStyle="btn--outline">Log In</LogInButton>}
             </ul>
-          )}
+          </div>
+        )}
       </div>
     </nav>
   );
 };
 
 export default Navbar;
-
-
-
