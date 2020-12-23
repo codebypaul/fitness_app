@@ -1,12 +1,7 @@
 import { AuthOptions } from './Divs'
 import { AuthBtn } from './Buttons'
-// import React, { useState } from "react";
 import Navbar from 'react-bootstrap/Navbar'
 import Nav from 'react-bootstrap/Nav'
-// import NavDropdown from 'react-bootstrap/NavDropdown'
-// import Form from 'react-bootstrap/Form'
-// import FormControl from 'react-bootstrap/FormControl'
-
 
 const Navbartwo = (props) => {
     return (
@@ -17,7 +12,7 @@ const Navbartwo = (props) => {
           <i className="fab fa-typo3" />
         </div>
         </Navbar.Brand>
-        <Navbar.Toggle className="" bg="dark" aria-controls="basic-navbar-nav"/>
+        <Navbar.Toggle className="" bg="white" aria-controls="basic-navbar-nav"/>
       <Navbar.Collapse className="" id="basic-navbar-nav">
         <Nav className="ml-auto d-flex align-items-center">
           <Nav.Link  className="navLink text-white" href="/">Home</Nav.Link>
@@ -53,10 +48,6 @@ const Navbartwo = (props) => {
             </AuthOptions>
           }
         </Nav>
-      {/* <Form inline>
-        <FormControl type="text" placeholder="Search" className="mr-sm-2" />
-        <Button variant="outline-success">Search</Button>
-      </Form> */}
       </Navbar.Collapse>
     </Navbar>
     );
